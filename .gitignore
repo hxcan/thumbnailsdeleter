@@ -1,0 +1,4 @@
+*.qbs.user 
+*.pro.user
+*.pro.user.*
+*.qbs.user.*

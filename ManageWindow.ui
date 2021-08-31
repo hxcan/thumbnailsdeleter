@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ManageWindow</class>
+ <widget class="QMainWindow" name="ManageWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Manage window</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Trash Cleaner</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QListWidget" name="imageFileUserlistWidget"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="currentFilelabel">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="directoryhorizontalLayout">
+         <item>
+          <widget class="QPushButton" name="addDirectorypushButton">
+           <property name="text">
+            <string>Add directory</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="removeDirectorypushButton">
+           <property name="text">
+            <string>Remove directory</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="DrAmtlabel_2">
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>addDirectorypushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManageWindow</receiver>
+   <slot>addDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>396</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>796</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeDirectorypushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManageWindow</receiver>
+   <slot>removeDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>607</x>
+     <y>515</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>798</x>
+     <y>555</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>AddUser()</slot>
+  <slot>DeleteUser()</slot>
+  <slot>EditUser()</slot>
+  <slot>addDirectory()</slot>
+  <slot>removeDirectory()</slot>
+ </slots>
+</ui>
