@@ -6,7 +6,7 @@
  */
 
 #include "DataType.h" //StoreNameCard
-#include "ThumbnailsDeleter.h" //
+
 #include "MainLogic.h" //DictItem
 
 #endif // COMMONHEADER_H

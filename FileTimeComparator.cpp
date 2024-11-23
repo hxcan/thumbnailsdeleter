@@ -1,9 +1,8 @@
 #include "TdPreCompile.h" //QFile
 
 
-#include "ThumbnailsDeleter.h"
 #include "CommonHeader.h" //DataType
-#include "ui_ThumbnailsDeleter.h"
+//#include "ui_ThumbnailsDeleter.h"
 #include "mapReduceFunctions.h" //getSubDirs
 #include "FileTimeComparator.h" //FileTimeComparator
 

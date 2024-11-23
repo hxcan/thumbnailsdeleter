@@ -87,7 +87,9 @@ QList<QString> getSubDirFileList(const QString dir2Scan)
         if (CrtDir.count()==0) //此目录为空。
         {
 //            CrtDir.removeRecursively(); //删除此目录。
-            bool rmdirResult=CrtDir.rmdir("."); //删除当前目录。
+//            bool rmdirResult=CrtDir.rmdir("."); //删除当前目录。
+            bool rmdirResult=CrtDir.rmdir(CrtDir.absolutePath()); //删除当前目录。
+
             
             cout << __FILE__ << ", " << __LINE__ << ", " << __func__ << ", directory: " << dir2Scan.toStdString() << ", whole amount: " << FlInfLst.size() << ", rmdir result: " << rmdirResult << endl; //Debug.
             
@@ -173,6 +175,10 @@ QString recognizeFile(const QString CrtFlNm)
     else if (mime.inherits ("video/x-msvideo")) //avi视频文件。
     {
         result=CrtFlNm; //是有用的文件。
+    } //else if (mime.inherits ("video/x-msvideo")) //avi视频文件。
+    else if (mime.inherits ("video/mp2t")) // ts 视频文件。
+    {
+      result = CrtFlNm; // 是有用的文件。
     } //else if (mime.inherits ("video/x-msvideo")) //avi视频文件。
     else if (mime.inherits ("video/quicktime")) //quicktime视频文件。
     {

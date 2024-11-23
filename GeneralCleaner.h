@@ -33,7 +33,7 @@ private:
     QQueue<QString> brokenFileNameQueue; //!<破损文件名列表。
     void updateListFileProgress(int progressValue); //!<列出文件的进度发生变化，则更新进度值。
     qint32 MaxSubDirScanTime=10*10000; //!<扫描子目录的最长时间。毫秒。
-    QTime subDirScanTime; //!<扫描子目录的计时器。
+    QElapsedTimer subDirScanTime; //!< 扫描子目录的计时器。
     int scanSubDirPass=0; //!<扫描子代目录的遍数。
     QTimer DltTimer; //!<Delte timer.
     void updateSearchProgress(quint64 progressValue); //!<搜索进度发生变化，则更新搜索进度。

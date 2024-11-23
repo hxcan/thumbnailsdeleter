@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Manage window</string>
+   <string>Thumbnails Deleter</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -33,6 +33,13 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="directoryhorizontalLayout">
+         <item>
+          <widget class="QPushButton" name="cleanNowpushButton">
+           <property name="text">
+            <string>Clean now</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QPushButton" name="addDirectorypushButton">
            <property name="text">
@@ -72,8 +79,8 @@
    <slot>addDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>396</x>
-     <y>531</y>
+     <x>523</x>
+     <y>530</y>
     </hint>
     <hint type="destinationlabel">
      <x>796</x>
@@ -97,6 +104,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>cleanNowpushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ManageWindow</receiver>
+   <slot>cleanNow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>517</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>549</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>AddUser()</slot>
@@ -104,5 +127,6 @@
   <slot>EditUser()</slot>
   <slot>addDirectory()</slot>
   <slot>removeDirectory()</slot>
+  <slot>cleanNow()</slot>
  </slots>
 </ui>

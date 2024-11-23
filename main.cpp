@@ -2,23 +2,22 @@
 
 #include "CommonHeader.h" //
 
-#include "TrashCleaner.h" //TrashCleaner
-
-#include "RpmbuildCleaner.h" //RpmbuildCleaner
+#include "ApplicationNameManager.h" //ApplicationNameManager
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+  QApplication a(argc, argv);
     
-    QTranslator CnTrns;
-    CnTrns.load("PublicServer"); //载入翻译文件。
+  QTranslator CnTrns;
+  CnTrns.load("PublicServer"); //载入翻译文件。
 
-    a.installTranslator(&CnTrns); //安装翻译文件。
+  a.installTranslator(&CnTrns); //安装翻译文件。
+  ApplicationNameManager *applicationNameManager =new ApplicationNameManager ; //Application name manager.
+  Q_UNUSED(applicationNameManager)
 
-    a.addLibraryPath(a.applicationDirPath ()); //添加插件目录。
+  a.addLibraryPath(a.applicationDirPath ()); //添加插件目录。
 
-    MainLogic mainLogic; //主逻辑。
-    
+  MainLogic mainLogic; //主逻辑。
 
-    return a.exec();
+  return a.exec();
 }

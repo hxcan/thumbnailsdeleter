@@ -1,5 +1,5 @@
 QT       += core sql
-
+QT+=websockets
 QT       += gui
 
 QT+=widgets
@@ -12,38 +12,31 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    ThumbnailsDeleter.cpp \
+    ApplicationNameManager.cpp \
     mapReduceFunctions.cpp \
     FileTimeComparator.cpp \
-    TrashCleaner.cpp \
-    RpmbuildCleaner.cpp \
     MainLogic.cpp \
     ManageWindow.cpp \
     GeneralCleaner.cpp
 
 HEADERS += \
+    ApplicationNameManager.h \
     DataType.h \
     CommonHeader.h \
     TdPreCompile.h \
-    ThumbnailsDeleter.h \
     mapReduceFunctions.h \
     FileTimeComparator.h \
-    TrashCleaner.h \
-    RpmbuildCleaner.h \
     MainLogic.h \
     ManageWindow.h \
     GeneralCleaner.h
 
 CONFIG+=precompile_header
 
-PRECOMPILED_HEADER+=TdPreCompile.h
+PRECOMPILED_HEADER += TdPreCompile.h
 
-QT+=network
+#QT+=network
 
 FORMS += \
-    ThumbnailsDeleter.ui \
-    TrashCleaner.ui \
-    RpmbuildCleaner.ui \
     ManageWindow.ui \
     GeneralCleaner.ui
 
@@ -59,3 +52,7 @@ target.path=/usr/bin
 
 INSTALLS += target
 CONFIG +=c++11
+
+unix:!macx: LIBS += -lRotatingActiveUserQt
+
+unix:!macx: LIBS += -llowmemoryqt

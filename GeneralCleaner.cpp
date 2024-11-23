@@ -1,12 +1,10 @@
 #include "TdPreCompile.h" //QFile
 
 
-#include "ThumbnailsDeleter.h"
 #include "CommonHeader.h" //DataType
-#include "ui_ThumbnailsDeleter.h"
+//#include "ui_ThumbnailsDeleter.h"
 #include "mapReduceFunctions.h" //getSubDirs
 #include "FileTimeComparator.h" //FileTimeComparator
-#include "TrashCleaner.h" //TrashCleaner
 #include "GeneralCleaner.h" //GeneralCleaner
 
 /*!
@@ -335,7 +333,7 @@ void GeneralCleaner::scanDirsNextLevel()
 
     if (subDirs.size ()) //有新结果。
     {
-        if (subDirScanTime.elapsed()>=MaxSubDirScanTime) //扫描子目录的时间过长。
+        if (subDirScanTime.elapsed() >= MaxSubDirScanTime) //扫描子目录的时间过长。
         {
             listDirFiles(); //开始列出文件。
         } //if (subDirScanTime.elapsed()>=MaxSubDirScanTime) //扫描子目录的时间过长。
